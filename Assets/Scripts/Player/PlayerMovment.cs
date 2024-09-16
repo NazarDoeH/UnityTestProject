@@ -1,3 +1,5 @@
+using ScriptableObjects;
+using UnityEditor.Build;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -40,8 +42,7 @@ public class PlayerMovment : MonoBehaviour
         movmentInput.x = Input.GetAxisRaw("Horizontal");
         movmentInput.z = Input.GetAxisRaw("Vertical");
 
-        isRuning = Input.GetKey(KeyCode.LeftShift);
-        
+        isRuning = Input.GetKey(KeyCode.LeftShift); 
     }
 
     private void FixedUpdate()

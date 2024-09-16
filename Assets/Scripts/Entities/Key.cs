@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+using ScriptableObjects;
 using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-
+    [Header("Audio")]
+    [SerializeField] SoundEffect keysPickupSFX;
     private void Start()
     {
         GameManager.instance.keysManager.IncreaseKeysNumber();
@@ -14,6 +14,7 @@ public class Key : MonoBehaviour
     {
         if (!other.CompareTag("Player")) { return; }
         GameManager.instance.keysManager.DecreaseKeysNumver();
+        keysPickupSFX.Play();
         Destroy(gameObject);
     }
 
