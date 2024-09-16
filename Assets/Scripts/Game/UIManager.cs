@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 
+//Manages the UI elements of the game
 public class UIManager : MonoBehaviour
 {
     //UI

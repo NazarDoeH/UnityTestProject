@@ -11,6 +11,11 @@ public class PlayerCameraController : MonoBehaviour
     [Header("Camera")]
     [SerializeField] private float mouseSensitivity;
 
+    [Range(-180.0f, 180)]
+    [SerializeField] private float cameraRotationMin = -90.0f;
+    [Range(-180.0f, 180)]
+    [SerializeField] private float cameraRotationMax = 90.0f;
+
     private Vector2 mouseInput;
     private Vector2 cameraRotation;
 
@@ -33,13 +38,12 @@ public class PlayerCameraController : MonoBehaviour
         if (!isCameraLocked)
             RotatePlayer();
     }
-
     //Camera rotation
     private void RotateCamera()
     {
         cameraRotation.x += mouseInput.x;
         cameraRotation.y -= mouseInput.y;
-        cameraRotation.y = Mathf.Clamp(cameraRotation.y, -90f, 90f);
+        cameraRotation.y = Mathf.Clamp(cameraRotation.y, cameraRotationMin, cameraRotationMax);
 
         transform.rotation = Quaternion.Euler(cameraRotation.y, cameraRotation.x, 0.0f);        
     }

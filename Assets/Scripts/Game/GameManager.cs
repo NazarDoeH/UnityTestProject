@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -33,8 +34,6 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
             uiManager.SetPauseMenuState(!isGamePaused);
     }
-
-
     //Level restart
     public void RestartLevel()
     {
@@ -59,6 +58,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = !state;
         Cursor.lockState = state ? CursorLockMode.Locked : CursorLockMode.None;
     }
+    //Game finish
     public void FinishGame(bool didPlayerWin)
     {
         uiManager.OpenRestartPanel(didPlayerWin);

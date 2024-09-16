@@ -1,7 +1,5 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
-using static Unity.VisualScripting.Member;
 using Random = UnityEngine.Random;
 
 namespace ScriptableObjects
@@ -21,9 +19,9 @@ namespace ScriptableObjects
         //Pitch
         [Header("Pitch")]
         [Range(-10.0f, 10.0f)]
-        public float pitchMin = 1f;
+        public float pitchMin = 1.0f;
         [Range(-10.0f, 10.0f)]
-        public float pitchMax = 1f;
+        public float pitchMax = 1.0f;
 
         //AudioMixer
         [Header("Audio mixer")]
@@ -54,8 +52,6 @@ namespace ScriptableObjects
                     playIndex = (playIndex + clips.Length - 1) % clips.Length;
                     break;
             }
-
-            //Return clip
             return clip;
         }
 
@@ -84,7 +80,7 @@ namespace ScriptableObjects
                 destroyAfterCreation = true;
             }
 
-            //Set source config:
+            //Set audio source config
             source.clip = GetAudioClip();
             source.outputAudioMixerGroup = group;
             source.volume = Random.Range(volumeMin, volumeMax);
@@ -92,7 +88,6 @@ namespace ScriptableObjects
 
             if(destroyAfterCreation) Destroy(source.gameObject, source.clip.length / source.pitch);
             return source;
-
         }
 
         enum SoundClipPlayOrder

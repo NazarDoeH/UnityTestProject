@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Prop_Set_Mat
+  m_Name: Mat_WallTrim
   m_Shader: {fileID: -6465566751694194690, guid: bbedfa6c7ca379747862390237251092,
     type: 3}
   m_Parent: {fileID: 0}
@@ -28,19 +28,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _ColorTexture:
-        m_Texture: {fileID: 2800000, guid: 441a56225e96ed540bebc0295dcafa5f, type: 3}
+        m_Texture: {fileID: 2800000, guid: cc82f76de545a924ba11bb24c27c9be5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Emission_Map:
-        m_Texture: {fileID: 2800000, guid: 064fcd41b67e24947ac5f960cc6ee44c, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MRAO_Map:
-        m_Texture: {fileID: 2800000, guid: 818866629355c7d4f86be933b40ec2a2, type: 3}
+        m_Texture: {fileID: 2800000, guid: b247cf7353a8d4c4299a06f47209669e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: bc519e6cf4653d0459d310102ddf9493, type: 3}
+        m_Texture: {fileID: 2800000, guid: 68b8790642edba741afb1dabb0efd42e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RGB_Mask:

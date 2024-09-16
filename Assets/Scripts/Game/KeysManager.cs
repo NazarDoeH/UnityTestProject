@@ -1,10 +1,8 @@
 using UnityEngine;
 
+//Manages key-related actions
 public class KeysManager : MonoBehaviour
-{
-    //UI manager
-    private UIManager uiManager;
-
+{    
     //Doors to open
     [Header("Doors")]
     [SerializeField] Door door;
@@ -15,11 +13,13 @@ public class KeysManager : MonoBehaviour
 
     private int currentKeysNumber;
 
+    //Increases the total number of keys
     public void IncreaseKeysNumber()
     {
         keysNumber++;
         GameManager.instance.uiManager.UpdateKeysCounter(keysNumber, currentKeysNumber);
     }
+    //Decreases the current number of keys
     public void DecreaseKeysNumver()
     {
         if (currentKeysNumber + 1 <= keysNumber) currentKeysNumber++;
@@ -27,7 +27,5 @@ public class KeysManager : MonoBehaviour
         GameManager.instance.uiManager.UpdateKeysCounter(keysNumber, currentKeysNumber);
 
         if (currentKeysNumber == keysNumber) door.OpenDoor();
-    }
-
-    
+    }   
 }

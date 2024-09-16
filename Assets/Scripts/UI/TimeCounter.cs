@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.Mathematics;
 using UnityEngine;
 
+//Script responsible for counting and displaying elapsed time.
+//The time is displayed in hours, minutes, seconds, and milliseconds.
 [RequireComponent(typeof(TMP_Text))]
 public class TimeCounter : MonoBehaviour
 {
@@ -27,6 +26,7 @@ public class TimeCounter : MonoBehaviour
     {
         time += Time.deltaTime;
 
+        //Calculate hours, minutes, seconds, and milliseconds from the elapsed time
         int hr = Mathf.FloorToInt(time / 3600f);
         int min = Mathf.FloorToInt((time % 3600f) / 60f);
         int sec = Mathf.FloorToInt(time % 60f);

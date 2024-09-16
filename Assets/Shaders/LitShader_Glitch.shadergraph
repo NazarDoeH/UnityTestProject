@@ -336,7 +336,7 @@
     "m_FragmentContext": {
         "m_Position": {
             "x": 322.0,
-            "y": 211.00001525878907
+            "y": 219.0
         },
         "m_Blocks": [
             {
@@ -1138,10 +1138,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -764.0,
-            "y": 209.0,
-            "width": 124.0,
-            "height": 34.0
+            "x": -96.00000762939453,
+            "y": 219.00001525878907,
+            "width": 124.00004577636719,
+            "height": 34.00001525878906
         }
     },
     "m_Slots": [
@@ -1285,10 +1285,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -627.0000610351563,
-            "y": 209.00001525878907,
-            "width": 208.0,
-            "height": 435.00006103515627
+            "x": 41.000064849853519,
+            "y": 219.00001525878907,
+            "width": 182.9999542236328,
+            "height": 250.99998474121095
         }
     },
     "m_Slots": [
@@ -1321,14 +1321,14 @@
         "tex2d"
     ],
     "m_Precision": 0,
-    "m_PreviewExpanded": true,
+    "m_PreviewExpanded": false,
     "m_DismissedVersion": 0,
     "m_PreviewMode": 0,
     "m_CustomColors": {
         "m_SerializableColors": []
     },
     "m_TextureType": 0,
-    "m_NormalMapSpace": 0,
+    "m_NormalMapSpace": 1,
     "m_EnableGlobalMipBias": true,
     "m_MipSamplingMode": 0
 }

@@ -1,7 +1,6 @@
-using ScriptableObjects;
-using UnityEditor.Build;
 using UnityEngine;
 
+//Handles player movement, walking, running, and ground detection.
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
 public class PlayerMovment : MonoBehaviour
@@ -15,6 +14,7 @@ public class PlayerMovment : MonoBehaviour
     //Movment
     [Header("Movment")]
     [SerializeField] private float movmentSpeed;
+    [SerializeField] private float groundDrag = 5.0f;
 
     private Vector3 movmentInput;
     private Vector3 movmentDirection;
@@ -26,6 +26,7 @@ public class PlayerMovment : MonoBehaviour
     //Ground check
     [Header("Ground check")]
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float raycastDistance = 0.2f;
     private bool isGrounded;
 
     private bool isRuning = false;
@@ -44,20 +45,22 @@ public class PlayerMovment : MonoBehaviour
 
         isRuning = Input.GetKey(KeyCode.LeftShift); 
     }
-
+    //Applies movement and checks if the player is grounded
     private void FixedUpdate()
     {
         PlayerMove();
 
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, capsuleCollider.height / 2.0f + 0.2f, groundLayer);
-        ridgidbody.drag = isGrounded ? 5.0f : 0.0f;
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, capsuleCollider.height / 2.0f + raycastDistance, groundLayer);
+        ridgidbody.drag = isGrounded ? groundDrag : 0.0f;
     }
-
+    // Handles the movement of the player based on input and running state.
     private void PlayerMove()
     {
-        //Movment
+        // Determine movement speed
         float movmentBoost = isRuning ? movmentSpeed + runBoost : movmentSpeed;
+        // Reduce movement speed if the player is not grounded
         if (!isGrounded) movmentBoost *= 0.1f;
+
         movmentDirection = transform.forward * movmentInput.z + transform.right * movmentInput.x;
         ridgidbody.AddForce(movmentDirection.normalized * movmentBoost * 10.0f, ForceMode.Acceleration);
     }

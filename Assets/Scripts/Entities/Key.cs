@@ -1,6 +1,7 @@
 using ScriptableObjects;
 using UnityEngine;
 
+//Handles the player's interaction with the key pickup object
 public class Key : MonoBehaviour
 {
     [Header("Audio")]

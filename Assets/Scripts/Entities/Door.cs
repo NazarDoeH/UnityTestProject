@@ -1,6 +1,4 @@
 using ScriptableObjects;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -18,7 +16,6 @@ public class Door : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
     }
-
     public void OpenDoor()
     {
         animator.SetTrigger("OpenDoorTrigger");
