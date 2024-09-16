@@ -6,7 +6,7 @@ using UnityEngine;
 public class KeysCounter : MonoBehaviour
 {
     private TMP_Text textMeshPro;
-    private void Start()
+    private void Awake()
     {
         textMeshPro = GetComponent<TMP_Text>();
     }
